@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <import resource="classpath:com/hjc/config/spring/spring-dataSource.xml"/>
+    <!--自动扫描包-->
+    <context:component-scan base-package="com.hjc"></context:component-scan>
+    <!-- MyBatis sqlSessionFactory 配置 mybatis-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!--
+            该属性用来指定MyBatis的XML配置文件路径,跟Spring整合时，编写MyBatis映射文件的目的无非是配置一下typeAlias、setting之类的
+            元素。不用在其中指定数据源，或者事务处理方式。就算配置了也会被忽略。因为这些都是使用Spring中的配置
+            。当然如果你不打算添加typeAlias 之类的设置的话，你连MyBatis的配置文件都不用写，更不用配置这个属性了
+        -->
+        <property name="configLocation" value="classpath:com/hjc/config/mybatis/MybatisConfig.xml" />
+        <!-- 该配置文件用来指定Mapper映射文件的位置 ，如果映射文件与相应的接口同名，且在同一路径下，那么可以不配置该选项,也可以在MybatisConfig.xml文件里配置mapper-->
+        <property name="mapperLocations" value="classpath:com/hjc/mapper/*Mapper.xml"/>
+        <!-- 要映射类的包路径，如果使用了这种方式，则configLocation中不必再进行声明
+     <property name="typeAliasesPackage" value="${mybatis.alias.basepackage}" />   -->
+    </bean>
+
+    <bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.hjc.dao.UserDao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+
+</beans>
