@@ -33,9 +33,16 @@
     <!--</package>-->
 
 
-    <package name="user" namespace="/smis/user" extends="struts-default">
+    <package name="user" namespace="/user" extends="struts-default">
         <action name="userAction" class="com.hjc.action.userAction">
             <result name="success" type="freemarker">/hello.html</result>
+        </action>
+    </package>
+
+    <package name="login" namespace="/login" extends="struts-default">
+        <action name="loginAction" class="com.hjc.action.loginAction">
+            <result name="page" type="freemarker">/BJUI/login.html</result>
+            <result name="success" type="freemarker">/BJUI/index.html</result>
         </action>
     </package>
 

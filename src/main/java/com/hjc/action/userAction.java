@@ -11,10 +11,11 @@ public class userAction extends ActionSupport{
     @Resource(name = "userService")
     private UserService userService;
 
-    public void test() {
+    public String test() {
         System.out.println("进入了Action");
         String id = "王五2";
         User u = userService.SelectPwdById(id);
         System.out.println("pwd:" + u.getPwd());
+        return SUCCESS;
     }
 }
