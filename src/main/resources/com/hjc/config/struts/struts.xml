@@ -41,8 +41,8 @@
 
     <package name="login" namespace="/login" extends="struts-default">
         <action name="loginAction" class="com.hjc.action.loginAction">
-            <result name="page" type="freemarker">/BJUI/login.html</result>
-            <result name="success" type="freemarker">/BJUI/index.html</result>
+            <result name="page" type="freemarker">/WEB-INF/page/portal/login.html</result>
+            <result name="success" type="freemarker">/WEB-INF/page/portal/index.html</result>
         </action>
     </package>
 

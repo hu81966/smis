@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <#include "../common/_public.html"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>B-JUI 系统登录</title>
+<title>学生管理信息系统登录</title>
 <meta name="renderer" content="webkit">
-<script src="../BJUI/B-JUI/js/jquery-1.11.3.min.js"></script>
-<script src="../BJUI/B-JUI/js/jquery.cookie.js"></script>
-<link href="../BJUI/B-JUI/themes/css/bootstrap.min.css" rel="stylesheet">
+<script src="${ctx}/BJUI/B-JUI/js/jquery-1.11.3.min.js"></script>
+<script src="${ctx}/BJUI/B-JUI/js/jquery.cookie.js"></script>
+<link href="${ctx}/BJUI/B-JUI/themes/css/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
 html, body { height: 100%; overflow: hidden; }
 body {
     font-family: "Verdana", "Tahoma", "Lucida Grande", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
-    background: url(images/loginbg_01.jpg) no-repeat center center fixed;
+    background: url(${ctx}/BJUI/images/loginbg_01.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 .form-control{height:37px;}
@@ -42,7 +43,7 @@ $(function() {
     $("#captcha_img").click(function(){
         changeCode();
     });
-    $("#login_form").submit(function(){
+    $("#login_form").submit(function(){debugger;
         var issubmit = true;
         var i_index  = 0;
         $(this).find('.form-control').each(function(i){
@@ -74,8 +75,17 @@ $(function() {
         */
         
         //return true;
-        
-        location.href = '/loginAction!login.do';
+
+        /*$.ajax({
+            type : "post",
+            url : "",
+            data : "",
+            success : function(data) {
+
+            }
+        });*/
+        debugger;
+        location.href = "user/userAction!test.do";
         
     });
 });
@@ -84,7 +94,7 @@ function changeCode(){
 }
 function choose_bg() {
     var bg = Math.floor(Math.random() * 9 + 1);
-    $('body').css('background-image', 'url(../BJUI/images/loginbg_0'+ bg +'.jpg)');
+    $('body').css('background-image', 'url(${ctx}/BJUI/images/loginbg_0'+ bg +'.jpg)');
 }
 </script>
 </head>
@@ -100,28 +110,28 @@ function choose_bg() {
 <![endif]-->
 <div class="container">
     <div class="main_box">
-        <form action="smis/login/loginAction!login.do" id="login_form" method="post">
+        <form action="${ctx}/login/loginAction!login.do" id="login_form" method="post">
             <input type="hidden" value="" id="j_randomKey" />
             <input type="hidden" name="jfinal_token" value="" />
-            <p class="text-center logo"><img src="../BJUI/images/logo.png" height="45"></p>
+            <p class="text-center logo"><img src="${ctx}/BJUI/images/logo.png" height="45"></p>
             <div class="login_msg text-center"><font color="red"></font></div>
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon-user"><span class="glyphicon glyphicon-user"></span></span>
-                    <input type="text" class="form-control" id="j_username" name="username" value="" placeholder="登录账号" aria-describedby="sizing-addon-user">
+                    <input type="text" class="form-control" id="j_username" name="user.name" value="" placeholder="登录账号" aria-describedby="sizing-addon-user">
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon-password"><span class="glyphicon glyphicon-lock"></span></span>
-                    <input type="password" class="form-control" id="j_password" name="passwordhash" placeholder="登录密码" aria-describedby="sizing-addon-password">
+                    <input type="password" class="form-control" id="j_password" name="user.pwd" placeholder="登录密码" aria-describedby="sizing-addon-password">
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon-password"><span class="glyphicon glyphicon-exclamation-sign"></span></span>
                     <input type="text" class="form-control" id="j_captcha" name="captcha" placeholder="验证码" aria-describedby="sizing-addon-password">
-                    <span class="input-group-addon code" id="basic-addon-code"><img id="captcha_img" src="../BJUI/images/captcha.jpg" alt="点击更换" title="点击更换" class="m"></span>
+                    <span class="input-group-addon code" id="basic-addon-code"><img id="captcha_img" src="${ctx}/BJUI/images/captcha.jpg" alt="点击更换" title="点击更换" class="m"></span>
                 </div>
             </div>
             <div class="form-group">
