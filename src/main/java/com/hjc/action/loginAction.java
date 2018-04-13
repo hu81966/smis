@@ -26,10 +26,6 @@ public class loginAction extends ActionSupport {
         }
     }
 
-    public String ddd() {
-        return SUCCESS;
-    }
-
     public User getUser() {
         return user;
     }
