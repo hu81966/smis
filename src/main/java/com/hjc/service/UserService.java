@@ -7,4 +7,6 @@ public interface UserService {
     public void test();
 
     public User SelectPwdById(String id);
+
+    public User login(User user);
 }

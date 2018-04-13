@@ -28,22 +28,9 @@
     <!-- 对于WebLogic，Orion，OC4J此属性设置为true-->
     <constant name="struts.dispather.parametersWorkaroud" value="false"></constant>
 
-    <!--<package name="basePackage-struts" extends="struts-default">-->
-
-    <!--</package>-->
+    <include file="action/user-struts.xml" />
 
 
-    <package name="user" namespace="/user" extends="struts-default">
-        <action name="userAction" class="com.hjc.action.userAction">
-            <result name="success" type="freemarker">/hello.html</result>
-        </action>
-    </package>
-
-    <package name="login" namespace="/login" extends="struts-default">
-        <action name="loginAction" class="com.hjc.action.loginAction">
-            <result name="page" type="freemarker">/WEB-INF/page/portal/login.html</result>
-            <result name="success" type="freemarker">/WEB-INF/page/portal/index.html</result>
-        </action>
-    </package>
+    
 
 </struts>

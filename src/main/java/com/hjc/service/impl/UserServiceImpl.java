@@ -22,4 +22,9 @@ public class UserServiceImpl implements UserService {
     public User SelectPwdById(String id) {
         return userDao.selectById(id);
     }
+
+    @Override
+    public User login(User user) {
+        return userDao.login(user);
+    }
 }
