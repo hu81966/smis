@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hjc.dao.UserDao"><!--这个namespace如果不加对应的dao就找不到对应的mapper-->
+
+
+    <select id = "selectById" resultType="User" parameterType="java.lang.String">
+        select * from t_student t where t.name = #{id}
+    </select>
+</mapper>

@@ -8,7 +8,7 @@ public class TestSpring {
 
     @Test
     public void Test() {
-        ApplicationContext ac = new ClassPathXmlApplicationContext(new String[]{"classpath:\\com\\hjc\\config\\spring\\spring-config.xml"});
+        ApplicationContext ac = new ClassPathXmlApplicationContext(new String[]{"classpath:\\spring-config.xml"});
         UserService userService = (UserService) ac.getBean("userService");
         userService.test();
     }

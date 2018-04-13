@@ -1,7 +1,10 @@
 package com.hjc.entity;
 
+import org.apache.ibatis.type.Alias;
+
 import java.util.Date;
 
+@Alias(value="User")
 public class User {
 
     private  String  id;
