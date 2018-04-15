@@ -15,7 +15,7 @@ public class userAction extends ActionSupport{
         System.out.println("进入了Action");
         String id = "王五2";
         User u = userService.SelectPwdById(id);
-        System.out.println("pwd:" + u.getPwd());
+        System.out.println("pwd:" + u.getUserPwd());
         return SUCCESS;
     }
 }

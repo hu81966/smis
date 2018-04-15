@@ -19,7 +19,7 @@ public class loginAction extends ActionSupport {
 
     public String login() {
         user = userService.login(user);
-        if (user != null && StringUtils.isNotEmpty(user.getName())) {
+        if (user != null && StringUtils.isNotEmpty(user.getUserId())) {
             return SUCCESS;
         } else {
             return "page";

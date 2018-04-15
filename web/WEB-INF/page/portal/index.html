@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>B-JUI 前端管理框架</title>
+<title>学生信息管理系统</title>
 <meta name="Keywords" content="B-JUI,Bootstrap,jquery,ui,前端,框架,开源,OSC,开源框架,knaan"/>
 <meta name="Description" content="B-JUI(Best jQuery UI)前端管理框架。轻松开发，专注您的业务，从B-JUI开始！"/> 
 <!-- bootstrap - css -->
@@ -155,10 +155,10 @@ function bjui_index_exchange() {
             <nav class="collapse navbar-collapse" id="bjui-top-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="datetime"><a><span id="bjui-date">0000/00/00</span> <span id="bjui-clock">00:00:00</span></a></li>
-                    <li><a href="#">账号：${user.name!}</a></li>
-                    <li><a href="#">角色：管理员</a></li>
+                    <li><a href="#">账号：${user.userName!}</a></li>
+                    <li><a href="#">角色：<#if user.userType == "1">管理员<#elseif user.userType == "2">教师<#elseif user.userType == "3">学生</#if> </a></li>
                     <li><a href="${ctx}/BJUI/changepassword.html" data-toggle="dialog" data-id="sys_user_changepass" data-mask="true" data-width="400" data-height="300">修改密码</a></li>
-                    <li><a href="login.html" style="font-weight:bold;">&nbsp;<i class="fa fa-power-off"></i> 注销登陆</a></li>
+                    <li><a href="${ctx}/login/loginAction!protal.do" style="font-weight:bold;">&nbsp;<i class="fa fa-power-off"></i> 注销登陆</a></li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle bjui-fonts-tit" data-toggle="dropdown" title="更改字号"><i class="fa fa-font"></i> 大</a>
                         <ul class="dropdown-menu" role="menu" id="bjui-fonts">
                             <li><a href="javascript:;" class="bjui-font-a" data-toggle="fonts"><i class="fa fa-font"></i> 特大</a></li>
@@ -194,20 +194,13 @@ function bjui_index_exchange() {
             <nav class="collapse navbar-collapse" id="bjui-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right" id="bjui-hnav-navbar">
                     <li class="active">
-                        <a href="${ctx}/BJUI/json/menu-form.json" data-toggle="sidenav" data-id-key="targetid">表单相关</a>
+                        <a href="${ctx}/BJUI/json/menu-user.json" data-toggle="sidenav" data-id-key="targetid">用户管理</a>
                     </li>
                     <li>
-                        <a href="${ctx}/BJUI/json/menu-base.json" data-toggle="sidenav" data-id-key="targetid">基础组件</a>
+                        <a href="${ctx}/BJUI/json/menu-base.json" data-toggle="sidenav" data-id-key="targetid">学生成绩</a>
                     </li>
                     <li>
-                        <a href="${ctx}/BJUI/json/menu-datagrid.json" data-toggle="sidenav" data-id-key="targetid">数据表格(Datagrid)</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="sidenav" data-tree="true" data-tree-options="{onClick:MainMenuClick}" data-id-key="targetid">待续……</a>
-                        <script class="items"></script>
-                    </li>
-                    <li>
-                        <a href="1.2" target="_blank">旧版DEMO</a>
+                        <a href="${ctx}/BJUI/json/menu-datagrid.json" data-toggle="sidenav" data-id-key="targetid">排名统计</a>
                     </li>
                 </ul>
             </nav>

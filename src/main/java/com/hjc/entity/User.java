@@ -2,16 +2,14 @@ package com.hjc.entity;
 
 import org.apache.ibatis.type.Alias;
 
-import java.util.Date;
-
 @Alias(value="User")
 public class User {
 
-    private  String  id;
-    private  String  name;
-    private  String  pwd;
-    private  Date createDateName;
-    private  Date    modifyDateTime;
+    private String id;
+    private String userId;
+    private String userPwd;
+    private String userName;
+    private String userType;
 
     public String getId() {
         return id;
@@ -21,35 +19,35 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getUserPwd() {
+        return userPwd;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setUserPwd(String userPwd) {
+        this.userPwd = userPwd;
     }
 
-    public Date getCreateDateName() {
-        return createDateName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setCreateDateName(Date createDateName) {
-        this.createDateName = createDateName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public Date getModifyDateTime() {
-        return modifyDateTime;
+    public String getUserType() {
+        return userType;
     }
 
-    public void setModifyDateTime(Date modifyDateTime) {
-        this.modifyDateTime = modifyDateTime;
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 }

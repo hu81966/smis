@@ -4,10 +4,19 @@
 <mapper namespace="com.hjc.dao.UserDao">
 
     <select id = "selectById" resultType="User" parameterType="java.lang.String">
-        SELECT * FROM T_STUDENT T WHERE T.NAME = #{id}
+        SELECT * FROM SYS_USER SU WHERE SU.NAME = #{id}
     </select>
 
     <select id="login" resultType="User" parameterType="User">
-        SELECT * FROM T_STUDENT T WHERE T.NAME = #{name} AND T.PWD = #{pwd}
+        SELECT
+          ID,
+          USER_ID AS userId,
+          USER_NAME AS userName,
+          USER_PWD AS userPwd,
+          USER_TYPE AS userType
+        FROM
+          SYS_USER SU
+        WHERE SU.USER_ID = #{userId}
+        AND SU.USER_PWD = #{userPwd}
     </select>
 </mapper>
