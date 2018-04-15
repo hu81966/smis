@@ -6,6 +6,7 @@ import com.hjc.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service(value = "userService")
 public class UserServiceImpl implements UserService {
@@ -26,5 +27,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public User login(User user) {
         return userDao.login(user);
+    }
+
+    @Override
+    public List<User> getAll() {
+        return userDao.getAll();
     }
 }

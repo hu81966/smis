@@ -8,7 +8,7 @@
 
     <package name="user" namespace="/user" extends="struts-default">
         <action name="userAction" class="com.hjc.action.userAction">
-            <result name="success" type="freemarker">/hello.html</result>
+            <result name="success" type="freemarker">/WEB-INF/page/user/userList.html</result>
         </action>
     </package>
 

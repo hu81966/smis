@@ -19,4 +19,15 @@
         WHERE SU.USER_ID = #{userId}
         AND SU.USER_PWD = #{userPwd}
     </select>
+
+    <select id="getAll" resultType="User">
+        SELECT
+          ID,
+          USER_ID AS userId,
+          USER_NAME AS userName,
+          USER_PWD AS userPwd,
+          USER_TYPE AS userType
+        FROM
+          SYS_USER SU
+    </select>
 </mapper>

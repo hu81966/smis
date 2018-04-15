@@ -1,6 +1,6 @@
 [
     {"name":"用户管理", "children":[
-        {"id":"user-list", "name":"用户列表", "target":"navtab", "url":"../BJUI/html/form/button.html"},
+        {"id":"user-list", "name":"用户列表", "target":"navtab", "url":"../user/userAction!list.do"},
         {"id":"base-button", "name":"按钮", "target":"navtab", "url":"../BJUI/html/form/button.html"},
         {"id":"base-input", "name":"文本框", "target":"navtab", "url":"../BJUI/html/form/input.html"},
         {"id":"base-select", "name":"下拉选择框", "target":"navtab", "url":"../BJUI/html/form/select.html"},
