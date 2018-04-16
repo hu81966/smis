@@ -13,7 +13,7 @@ public class loginAction extends ActionSupport {
     @Autowired
     private UserService userService;
 
-    public String protal() {
+    public String portal() {
         return "page";
     }
 
