@@ -27,6 +27,19 @@ public class userAction extends ActionSupport{
         return SUCCESS;
     }
 
+    public String addUser() {
+        return "add";
+    }
+
+    public String editUser() {
+        return "edit";
+    }
+
+    public String deleteUser() {
+        return "delete";
+    }
+
+
     public List<User> getUserList() {
         return userList;
     }
